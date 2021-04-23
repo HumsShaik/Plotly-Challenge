@@ -10,8 +10,18 @@ function InitDashboard(){
 
 
     // read data from samples.json and use this data to populate the dropdown
-    d3.json("data/samples.json").then(function(data) {
+    d3.json("data/samples.json").then(data => {
 		console.log(data);
+
+
+        var sampleNames = data.names;
+
+        sampleNames.forEach(sampleId => {
+            selector.append("option")
+               .text(sampleId)
+               .property("value", sampleId);
+        });
+
 
     });
 
