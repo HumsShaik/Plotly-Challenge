@@ -4,7 +4,10 @@ console.log("app.js loaded");
 
 function DrawBargraph(sampleId) {
 	console.log(`DrawBargraph(${sampleId})`);
-
+  
+    d3.json("data/samples.json").then(data => {
+		console.log(data);
+    });
 }
 
 function DrawBubblechart(sampleId) {
@@ -46,10 +49,9 @@ function InitDashboard(){
                .property("value", sampleId);
         });
 
-     // generate code for dropdown
-
+    // generate code for dropdown
         var id = sampleNames[0];
-
+     // Draw graphs and metadata
         DrawBargraph(id);
         DrawBubblechart(id);
         ShowMetadata(id); 
