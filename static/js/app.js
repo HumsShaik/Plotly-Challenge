@@ -7,6 +7,23 @@ function DrawBargraph(sampleId) {
   
     d3.json("data/samples.json").then(data => {
 		console.log(data);
+
+        var samples = data.samples;
+		var resultArray = samples.filter(s => s.id == sampleId);
+        console.log(resultArray);
+
+		var result = resultArray[0];
+        console.log(result);
+
+        var otu_ids = result.otu_ids;
+        console.log(otu_ids);
+
+        var otu_labels = result.otu_labels;
+        console.log(otu_labels);
+
+        var sample_values = result.sample_values;
+		console.log(sample_values);
+
     });
 }
 
