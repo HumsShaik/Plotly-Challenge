@@ -18,6 +18,13 @@ function ShowMetadata(sampleId) {
 	
 }
 
+function optionChanged(newSampleId) {
+	console.log(`User selected ${newSampleId}`);
+	
+	DrawBargraph(newSampleId);
+	DrawBubblechart(newSampleId);
+	ShowMetadata(newSampleId);
+}
 
 function InitDashboard(){
     console.log("InitDashboard()");
@@ -46,7 +53,7 @@ function InitDashboard(){
         DrawBargraph(id);
         DrawBubblechart(id);
         ShowMetadata(id); 
-        //drawGuage(id);
+        //DrawGuage(id);
     });
 
     // Update the bargraph
